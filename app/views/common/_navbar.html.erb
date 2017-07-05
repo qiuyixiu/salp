@@ -29,11 +29,11 @@
         </li>
         <% if !current_user %>
           <li><%= link_to("注册", new_user_registration_path) %></li>
-          <li><%= link_to(content_tag(:i, "登入", class: "fa fa-sign-in"), new_user_session_path) %></li>
+          <li><%= link_to(content_tag(:i, "登录", class: "fa fa-sign-in"), new_user_session_path) %></li>
         <% else %>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              你好，<%= current_user.name %>
+              你好，<img src= "<%= user_avatar(current_user, 20) %>"> <%= current_user.name %>
               <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
