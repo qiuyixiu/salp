@@ -1,4 +1,4 @@
-<div class="container account-box">
+<div class="container account-page">
   <div class="row">
     <h2 class="text-center">个人资料</h2>
     <%= simple_form_for [:account, @user] do |f| %>
@@ -6,7 +6,8 @@
       <!-- 当前头像 -->
       <div class="">
         <% if @user.avatar.present? %>
-          <%= image_tag(@user.avatar.url, class: "img-circle img-responsive center-block" )%>
+          <img width="200" height="200" src= "<%= render_user_avatar(current_user, 20) %>" class="avatar center-block">
+
         <% else %>
           <%= image_tag("http://placehold.it/80x80&text=No Pic", class: "img-circle img-responsive center-block") %>
         <% end %>

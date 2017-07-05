@@ -54,11 +54,23 @@ body {
 }
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
     background-color: white;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
 
 }
+
 img.avatar {
   border-radius: 50%;
 }
+
+//---注册登录页面
+.log-page {
+  margin-top: 60px;
+}
+
 
 //-----footer------
 .footer {
@@ -67,7 +79,8 @@ img.avatar {
   padding-top: 20px;
 }
 
-.account-box {
+//个人中心页面
+.account-page {
   margin: 30px auto;
   padding-left: 70px;
 }
