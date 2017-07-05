@@ -19,12 +19,22 @@
 @import "font-awesome";
 
 html {
-  position: relative;
-  min-height: 100%;
+
 }
 
 body {
-  margin-bottom: 100px;  /* margin bottom by footer height */
+  min-height: 100vh;                                   //footer置底
+  display: flex;                                       //footer置底
+  flex-direction: column;                              //footer置底
+  font-family:  "Times New Roman",
+               "Microsoft YaHei", "微软雅黑",
+               STXihei, "华文细黑";
+
+  padding-top: 50px;                                   //不让navbar遮挡正文
+  color: #000000;
+  .content {
+    flex: 1;                                           //footer置底
+  }
 
   a {                                                 // 所有a标签统一样式
       color: #000000;                                      // 链接反转的样式
@@ -44,9 +54,12 @@ body {
 
 //-----footer------
 .footer {
-  position: absolute;
-  bottom: 0;
   width: 100%;
   background-color: #F0E68C;
   padding-top: 20px;
+}
+
+.account-box {
+  margin: 30px auto;
+  padding-left: 70px;
 }
