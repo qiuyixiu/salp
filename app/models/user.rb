@@ -8,5 +8,7 @@ class User < ApplicationRecord
     is_admin
   end
 
+  validates_uniqueness_of :name
+
   mount_uploader :avatar, UserAvatarUploader
 end

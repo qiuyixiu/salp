@@ -42,6 +42,6 @@ class IntroductionsController < ApplicationController
   private
 
   def introduction_params
-    params.require(:introduction).permit(:title, :description)
+    params.require(:introduction).permit(:title, :description, :image)
   end
 end

@@ -66,6 +66,20 @@ img.avatar {
   border-radius: 50%;
 }
 
+//introductions index页面
+.nav-left-style {
+
+    margin: 30px auto;
+    background-color: #F0E68C;
+    
+
+  }
+
+  .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+
+      background-color: #F0E68C;
+  }
+
 //---注册登录页面
 .log-page {
   margin-top: 60px;

@@ -45,7 +45,7 @@ class Admin::IntroductionsController < ApplicationController
   private
 
   def introduction_params
-    params.require(:intorduction).permit(:title, :description)
+    params.require(:intorduction).permit(:title, :description, :image)
   end
 
 end
