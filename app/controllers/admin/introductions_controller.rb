@@ -28,9 +28,9 @@ class Admin::IntroductionsController < ApplicationController
   end
 
   def update
-    @introduction = Introduction.find(parmas[:id])
+    @introduction = Introduction.find(params[:id])
     if @introduction.update(introduction_params)
-      redirect_to admin_introdcutions_path
+      redirect_to admin_introductions_path
     else
       render :edit
     end
@@ -45,7 +45,7 @@ class Admin::IntroductionsController < ApplicationController
   private
 
   def introduction_params
-    params.require(:intorduction).permit(:title, :description, :image)
+    params.require(:introduction).permit(:title, :description, :image)
   end
 
 end
