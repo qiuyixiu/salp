@@ -10,5 +10,5 @@ class User < ApplicationRecord
 
   validates_uniqueness_of :name
 
-  mount_uploader :avatar, UserAvatarUploader
+  mount_uploader :avatar, ImageUploader
 end

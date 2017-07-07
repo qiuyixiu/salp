@@ -85,6 +85,24 @@ img.avatar {
       background-color: #F0E68C;
   }
 
+.introduction-image {
+  width: 250px;
+  height: 250px;
+}
+
+//introductions show内容设置
+.description {
+  margin: 30px auto;
+  font-size: 1.2em;
+  line-height: 1.8em;
+  text-align: justify;
+  img {
+    max-width:100%;height:auto;             //重要样式代码，需要配合application.js的自适应代码块一起使用
+    border-radius: 6px;
+    }
+}
+
+
 //---注册登录页面
 .log-page {
   margin-top: 60px;
