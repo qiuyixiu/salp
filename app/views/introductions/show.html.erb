@@ -7,4 +7,5 @@
   <div class="description">
     <%= sanitize @introduction.description %>
   </div>
+  <%= link_to(content_tag(:i, "返回上一页", class: "fa fa-hand-o-left"), introductions_path) %>
 </div>
