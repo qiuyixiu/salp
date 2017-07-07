@@ -1,4 +1,6 @@
 class IntroductionsController < ApplicationController
+  impressionist
+
   def index
     @introductions = Introduction.all
   end
@@ -9,6 +11,7 @@ class IntroductionsController < ApplicationController
 
   def show
     @introduction = Introduction.find(params[:id])
+    impressionist(@introduction)
   end
 
   def edit

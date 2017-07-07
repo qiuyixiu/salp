@@ -7,5 +7,7 @@
   <div class="description">
     <%= sanitize @introduction.description %>
   </div>
+  总浏览量： <%= @introduction.impressionist_count %>
+
   <%= link_to(content_tag(:i, "返回上一页", class: "fa fa-hand-o-left"), introductions_path) %>
 </div>
