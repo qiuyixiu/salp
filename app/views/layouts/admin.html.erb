@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<br><br>
+  <head>
+    <title>管理后台</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'admin', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'admin', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="content">
+      <div class="container">
+        <%= render "common/navbar" %>
+        <%= render "common/flashes" %>
+
+          <div class="">
+
+            <!-- 侧边分类选项栏 -->
+            <div class="col-md-2 nav-left-style">
+              <ul class="nav nav-pills nav-stacked text-center" style="max-width: 300px;">
+                <br><br><br>
+                <h3 class="text-center" >管理后台</h3>
+                <hr>
+                <li><%= link_to("了解促进会管理", admin_introductions_path) %></li>
+                <hr>
+                <li><%= link_to("通知公告管理", admin_notices_path) %></li>
+                <hr>
+                <li><%= link_to("动态栏目管理", "#") %></li>
+                <hr>
+                <li><%= link_to("皮雕大赛管理", "#") %></li>
+              </ul>
+            </div>
+
+            <!-- 主内容 -->
+            <div class="col-md-10">
+              <%= yield %>
+            </div>
+
+          </div>
+      </div>
+    </div>
+
+
+
+
+  </body>
+</html>
