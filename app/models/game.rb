@@ -1,4 +1,4 @@
-class Introduction < ApplicationRecord
+class Game < ApplicationRecord
   mount_uploader :image, ImageUploader
   is_impressionable
 

@@ -7,21 +7,11 @@
       <hr>
     </div>
     <% @notices.each do |notice| %>
-      <div class="col-xs-12 col-md-4">
-        <%= link_to notice_path(notice) do %>
-          <% if notice.image.present? %>
-            <%= link_to image_tag(notice.image.small.url, class: "img-responsive center-block  notice-image"), notice_path(notice) %>
-          <% else %>
-            <%= link_to image_tag("http://placehold.it/250x250&text=No Pic", class: "img-responsive center-block"), notice_path(notice) %>
-          <% end %>
-          <hr>
-          <div class="text-center">
-            <%= link_to(notice.title, notice_path(notice)) %>
+      <div class="col-xs-12 col-md-6 text">
+          <div class="text-left">
+            <li><%= link_to(notice.title, notice_path(notice)) %>(<%= notice.created_at.to_s %>)</li>
           </div>
-        <% end %>
       </div>
-
-
     <% end %>
 
     <div class="col-md-12 text-center back-index">

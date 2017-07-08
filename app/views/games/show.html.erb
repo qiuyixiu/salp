@@ -1,0 +1,13 @@
+<br><br><br>
+<div class="container">
+  <div class="row">
+    <h2 class="text-center"><%= @game.title %></h2>
+  </div>
+  <br><br><br>
+  <div class="description">
+    <%= sanitize @game.description %>
+  </div>
+  总浏览量： <%= @game.impressionist_count %>
+  <br>
+  <%= link_to(content_tag(:i, "返回上一页", class: "fa fa-hand-o-left"), games_path) %>
+</div>

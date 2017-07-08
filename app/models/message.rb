@@ -1,4 +1,4 @@
-class Introduction < ApplicationRecord
+class Message < ApplicationRecord
   mount_uploader :image, ImageUploader
   is_impressionable
 

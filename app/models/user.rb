@@ -8,6 +8,11 @@ class User < ApplicationRecord
     is_admin
   end
 
+  has_many :introductions
+  has_many :games
+  has_many :messages
+  has_many :notices
+
   validates_uniqueness_of :name
 
   mount_uploader :avatar, ImageUploader

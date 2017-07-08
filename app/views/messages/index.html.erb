@@ -1,0 +1,34 @@
+
+<br><br><br>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h3 class="text-center">动态</h3>
+      <hr>
+    </div>
+    <% @messages.each do |message| %>
+      <div class="col-md-6 ">
+        <div class="col-md-5 all_image_css">
+          <% if message.image.present? %>
+            <%= link_to image_tag(message.image.small.url, class: "img-responsive center-block  introduction-image"), message_path(message) %>
+          <% else %>
+            <%= link_to image_tag("http://placehold.it/250x250&text=No Pic", class: "img-responsive center-block"), message_path(message) %>
+          <% end %>
+        </div>
+        <div class="col-md-7">
+          <%= link_to(message.title, message_path(message), class: "text") %>
+          <div class="col-dm-6">
+            <span><%= message.user.email %></span>
+          </div>
+          <div class="col-dm-6">
+            <span><%= message.created_at.to_s %></span>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+    <div class="col-md-12 text-center back-index">
+      <a href="/" style="font-size: 1.5em;"><i class="fa fa-hand-o-left fa-1x"></i>回到首页</a>
+    </div>
+  </div>
+</div>

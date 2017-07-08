@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170708081333) do
+ActiveRecord::Schema.define(version: 20170708212939) do
+
+  create_table "games", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "image"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "impressions", force: :cascade do |t|
     t.string   "impressionable_type"
@@ -38,12 +46,36 @@ ActiveRecord::Schema.define(version: 20170708081333) do
     t.index ["user_id"], name: "index_impressions_on_user_id"
   end
 
+  create_table "infomrations", force: :cascade do |t|
+    t.string   "title"
+    t.string   "image"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "information", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "image"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "introductions", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "image"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string   "title"
+    t.string   "image"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "notices", force: :cascade do |t|

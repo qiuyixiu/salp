@@ -3,10 +3,14 @@ Rails.application.routes.draw do
   root 'welcome#index'
   resources :introductions
   resources :notices
+  resources :messages
+  resources :games
 
   namespace :admin do
     resources :introductions
     resources :notices
+    resources :messages
+    resources :games
   end
 
   namespace :account do
