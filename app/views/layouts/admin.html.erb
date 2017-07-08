@@ -6,13 +6,55 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'admin', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'admin', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'admin' %>
   </head>
+
+
 
   <body>
     <div class="content">
       <div class="container">
-        <%= render "common/navbar" %>
+        <nav class="navbar navbar-default navbar-fixed-top navbar-style" role="navigation">
+          <div class="container">
+            <div class="navbar-header nav-container">
+              <a href="/admin/" class="navbar-brand " style="font-size: 1.5em;">深圳市皮雕艺术促进会管理后台</a>
+
+              <!-- 响应式导航 -->
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+
+            <!-- 菜单 -->
+            <div class="navbar-collapse navbar-ex1-collapse collapse navbar-right" aria-expanded="false">
+              <ul class="nav navbar-nav navbar-right">
+                <li>
+                  <%= link_to("回到前台", root_path) %>
+                </li>
+
+                <% if !current_user %>
+                  <li><%= link_to("注册", new_user_registration_path) %></li>
+                  <li><%= link_to(content_tag(:i, "登录", class: "fa fa-sign-in"), new_user_session_path) %></li>
+                <% else %>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                      你好，<%= current_user.name %>
+                      <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+
+                      <li><%= link_to("修改密码", edit_registration_path(:user)) %></li>
+                      <li><%= link_to(content_tag(:i, "退出", class: "fa fa-sign-out"), destroy_user_session_path, method: :delete) %></li>
+                    </ul>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+        </nav>
         <%= render "common/flashes" %>
 
           <div class="">
@@ -21,8 +63,6 @@
             <div class="col-md-2 nav-left-style">
               <ul class="nav nav-pills nav-stacked text-center" style="max-width: 300px;">
                 <br><br><br>
-                <h3 class="text-center" >管理后台</h3>
-                <hr>
                 <li><%= link_to("了解促进会管理", admin_introductions_path) %></li>
                 <hr>
                 <li><%= link_to("通知公告管理", admin_notices_path) %></li>

@@ -1,0 +1,31 @@
+
+<br><br><br>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h3 class="text-center">通知公告</h3>
+      <hr>
+    </div>
+    <% @notices.each do |notice| %>
+      <div class="col-xs-12 col-md-4">
+        <%= link_to notice_path(notice) do %>
+          <% if notice.image.present? %>
+            <%= link_to image_tag(notice.image.small.url, class: "img-responsive center-block  notice-image"), notice_path(notice) %>
+          <% else %>
+            <%= link_to image_tag("http://placehold.it/250x250&text=No Pic", class: "img-responsive center-block"), notice_path(notice) %>
+          <% end %>
+          <hr>
+          <div class="text-center">
+            <%= link_to(notice.title, notice_path(notice)) %>
+          </div>
+        <% end %>
+      </div>
+
+
+    <% end %>
+
+    <div class="col-md-12 text-center back-index">
+      <a href="/" style="font-size: 1.5em;"><i class="fa fa-hand-o-left fa-1x"></i>回到首页</a>
+    </div>
+  </div>
+</div>
