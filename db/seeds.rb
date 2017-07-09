@@ -5,3 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+if User.find_by(email: "admin@salp.com").nil?
+  a = User.new
+  a.email = "admin@salp.com"           # 可以改成自己的 email
+  a.name = "管理员"
+  a.password = "123456"                # 最少要六码
+  a.password_confirmation = "123456"   # 最少要六码
+  a.is_admin = true
+  a.save
+  puts "管理员 已经建立好了，帐号为#{a.email}, 密码为#{a.password}"
+else
+  puts "管理员 已经建立过了，脚本跳过该步骤。"
+end
