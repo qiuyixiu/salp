@@ -22,6 +22,7 @@ class Admin::IntroductionsController < ApplicationController
 
   def create
     @introduction = Introduction.new(introduction_params)
+    @introduction.user = current_user
     if @introduction.save
       redirect_to admin_introductions_path
     else
