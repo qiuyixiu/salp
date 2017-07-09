@@ -1,16 +1,9 @@
 class WelcomeController < ApplicationController
-  impressionist :actions=>[:index]
   def index
-    @welcomes = Welcome.all
+    @introductions = Introduction.all
+    @notices = Notice.all
+    @messages = Message.all
   end
-
-  def show
-    @welcome = Welcome.find(params[:id])
-  end
-
-  
-
-
 
 
 end

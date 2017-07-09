@@ -3,7 +3,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <h3 class="text-center">动态</h3>
+      <h3 class="text-center">动态信息</h3>
       <hr>
     </div>
     <% @messages.each do |message| %>
@@ -17,11 +17,13 @@
         </div>
         <div class="col-md-7">
           <%= link_to(message.title, message_path(message), class: "text") %>
-          <div class="col-dm-6">
-            <span><%= message.user.email %></span>
-          </div>
-          <div class="col-dm-6">
-            <span><%= message.created_at.to_s %></span>
+          <div class="row message-user">
+            <div class="col-md-6">
+              <span><%= message.user.name %></span>
+            </div>
+            <div class="col-md-6">
+              <span><%= message.created_at.to_s %></span>
+            </div>
           </div>
         </div>
       </div>

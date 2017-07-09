@@ -9,7 +9,12 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :introductions
     resources :notices
-    resources :messages
+    resources :messages do
+      member do
+        post :publish
+        post :hide
+      end
+    end
     resources :games
   end
 

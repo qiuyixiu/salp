@@ -1,6 +1,7 @@
 <%= simple_form_for [:admin, @message] do |f| %>
   <div class="form-group">
     <%= f.input :title, :label => "标题" %>
+    <%= f.input :is_hidden, :label => "隐藏" %>
     <% if @message.image.present? %>
       <span>目前封面图</span><br>
       <%= image_tag(@message.image.small.url) %>

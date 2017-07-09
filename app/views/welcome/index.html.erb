@@ -1,24 +1,144 @@
-<br><br>
-
-<div class="container-fluid">
+<!-- ↓↓↓ 大图滚动banner 代码块↓↓↓ -->
   <div class="row">
-    <div class="col-md-12 text-center">
-    <!-- <%= image_tag("http://oon3erbcp.bkt.clouddn.com/tu3.jpg")%> -->
+    <div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
+      <div class="overlay"></div>
+
+      <!-- 默认三张图列表 -->
+      <div class="banner">
+        <ul class="carousel-indicators ">
+          <li data-target="#bs-carousel" data-slide-to="0" class="active"></li>
+          <li data-target="#bs-carousel" data-slide-to="1"></li>
+          <li data-target="#bs-carousel" data-slide-to="2"></li>
+        </ul>
+      </div>
+
+      <!-- 文案部分 -->
+      <div class="carousel-inner">
+        <div class="item slides active">
+          <div class="slide-1"></div>
+          <div class="hero row">
+            <hgroup>
+                <h1>深圳市皮雕艺术促进会</h1>
+                <h3>正式成立啦！</h3>
+            </hgroup>
+            <!-- <button class="btn btn-hero btn-lg" role="button">测试跳转链接</button> -->
+          </div>
+        </div>
+        <div class="item slides">
+          <div class="slide-2"></div>
+          <div class="hero">
+            <hgroup>
+                <h1>这里</h1>
+                <h3>皮雕爱好者温暖的港湾！</h3>
+            </hgroup>
+            <!-- <button class="btn btn-hero btn-lg" role="button">测试跳转链接</button> -->
+          </div>
+        </div>
+        <div class="item slides">
+          <div class="slide-3"></div>
+          <div class="hero">
+            <hgroup>
+                <h1>这里</h1>
+                <h3>大师云集，带你前行！</h3>
+            </hgroup>
+            <!-- <button class="btn btn-hero btn-lg" role="button">测试跳转链接</button> -->
+          </div>
+        </div>
+
+      </div>
     </div>
+  </div>
+<!-- ↑↑↑ 大图滚动banner 代码块 ↑↑↑ -->
+
+<!-- 了解促进会区域 -->
+<hr>
+<div class="container">
+  <div class="row topspan nav-container">
+    <div class="col-xs-6">
+      <h3>了解促进会</h3>
+    </div>
+    <div class="col-xs-6">
+      <%= link_to("更多 >", introductions_path, class: "pull-right") %>
+    </div>
+  </div>
+
+  <div class="row">
+    <% @introductions.each do |introduction| %>
+      <div class="col-xs-12 col-md-4">
+        <%= link_to introduction_path(introduction) do %>
+          <% if introduction.image.present? %>
+            <%= link_to image_tag(introduction.image.small.url, class: "img-responsive left-block  introduction-image"), introduction_path(introduction) %>
+          <% else %>
+            <%= link_to image_tag("http://placehold.it/250x250&text=No Pic", class: "img-responsive left-block introduction-image"), introduction_path(introduction) %>
+          <% end %>
+
+          <div class="text-left">
+            <%= link_to(introduction.title, introduction_path(introduction)) %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 </div>
 
-<br><br><br>
-<div class="">
-  <% @welcomes.each do |welcome| %>
-    <%= link_to welcome_path(welcome) do %>
-      <div class="col-xs-12 col-md-4">
-        总浏览量： <%= welcome.impressionist_count %>
+<!-- 通知公告区域 -->
+<hr>
+<div class="container">
+  <div class="row topspan nav-container">
+    <div class="col-xs-6">
+      <h3>通知公告</h3>
+    </div>
+    <div class="col-xs-6">
+      <%= link_to("更多 >", notices_path, class: "pull-right") %>
+    </div>
+  </div>
+
+  <div class="row">
+    <% @notices.each do |notice| %>
+      <div class="col-xs-12 col-md-4 text">
+          <div class="text-left">
+            <li><%= link_to(notice.title, notice_path(notice)) %>(<%= notice.created_at.to_s %>)</li>
+          </div>
       </div>
     <% end %>
-  <% end %>
+  </div>
 </div>
 
-<%= link_to introductions_path do %>
+<!-- 动态信息区域 -->
+<hr>
+<div class="container">
+  <div class="row topspan nav-container">
+    <div class="col-xs-6">
+      <h3>动态信息</h3>
+    </div>
+    <div class="col-xs-6">
+      <%= link_to("更多 >", messages_path, class: "pull-right") %>
+    </div>
+  </div>
 
-<% end %>
+  <div class="row">
+    <% @messages.each do |message| %>
+      <div class="col-md-6 ">
+        <div class="col-md-5 all_image_css">
+          <% if message.image.present? %>
+            <%= link_to image_tag(message.image.small.url, class: "img-responsive left-block  introduction-image"), message_path(message) %>
+          <% else %>
+            <%= link_to image_tag("http://placehold.it/250x250&text=No Pic", class: "img-responsive left-block introduction-image"), message_path(message) %>
+          <% end %>
+        </div>
+        <div class="col-md-7">
+          <%= link_to(message.title, message_path(message), class: "text") %>
+          <div class="row message-user">
+            <div class="col-md-6">
+              <span><%= message.user.name %></span>
+            </div>
+            <div class="col-md-6">
+              <span><%= message.created_at.to_s %></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<br><br><br>

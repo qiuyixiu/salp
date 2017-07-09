@@ -25,8 +25,8 @@
 
               <td><%= game.created_at %></td>
               <td>
-                <%= link_to("Edit", edit_admin_game_path(game)) %> |
-                <%= link_to("Destroy", admin_game_path(game), method: :delete, data: { confirm: "你确定要删除吗？"}) %>
+                <%= link_to("编辑", edit_admin_game_path(game)) %> |
+                <%= link_to("删除", admin_game_path(game), method: :delete, data: { confirm: "你确定要删除吗？"}) %>
               </td>
             </tr>
           <% end %>

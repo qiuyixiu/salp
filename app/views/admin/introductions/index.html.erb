@@ -25,8 +25,8 @@
 
               <td><%= introduction.created_at %></td>
               <td>
-                <%= link_to("Edit", edit_admin_introduction_path(introduction)) %> |
-                <%= link_to("Destroy", admin_introduction_path(introduction), method: :delete, data: { confirm: "你确定要删除吗？"}) %>
+                <%= link_to("编辑", edit_admin_introduction_path(introduction)) %> |
+                <%= link_to("删除", admin_introduction_path(introduction), method: :delete, data: { confirm: "你确定要删除吗？"}) %>
               </td>
             </tr>
           <% end %>
