@@ -5,7 +5,7 @@ class Admin::NoticesController < ApplicationController
   before_action :require_is_admin
 
   def index
-    @notices = Notice.all
+    @notices = Notice.order("created_at DESC").page(params[:page]).per(20)
   end
 
   def new

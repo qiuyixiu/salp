@@ -2,7 +2,7 @@ class MessagesController < ApplicationController
   impressionist
 
   def index
-    @messages = Message.where(:is_hidden => false).order("created_at DESC")
+    @messages = Message.where(:is_hidden => false).order("created_at DESC").page(params[:page]).per(20)
   end
 
   def show
