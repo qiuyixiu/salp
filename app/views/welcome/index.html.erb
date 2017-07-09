@@ -141,4 +141,36 @@
     <% end %>
   </div>
 </div>
+
+<!-- 皮雕比赛区域 -->
+<hr>
+<div class="container">
+  <div class="row topspan nav-container">
+    <div class="col-xs-6">
+      <h3>皮雕比赛</h3>
+    </div>
+    <div class="col-xs-6">
+      <%= link_to("更多 >", games_path, class: "pull-right") %>
+    </div>
+  </div>
+
+  <div class="row index-content">
+    <% @games.each do |game| %>
+
+        <div class="col-xs-2 text-left text">
+          <%= link_to(game.title, game_path(game)) %>
+        </div>
+        <div class="col-xs-10>
+          <%= link_to game_path(game) do %>
+            <% if game.image.present? %>
+              <%= link_to image_tag(game.image.middle.url, class: "img-responsive center-block  game-image"), game_path(game) %>
+            <% else %>
+              <%= link_to image_tag("http://placehold.it/800x600&text=No Pic", class: "img-responsive center-block"), game_path(game) %>
+            <% end %>
+          <% end %>
+        <hr>
+        </div>
+    <% end %>
+  </div>
+</div>
 <br><br><br>
