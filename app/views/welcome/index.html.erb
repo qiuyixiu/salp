@@ -62,17 +62,17 @@
     </div>
   </div>
 
-  <div class="row">
+  <div class="row index-content">
     <% @introductions.each do |introduction| %>
       <div class="col-xs-12 col-md-4">
         <%= link_to introduction_path(introduction) do %>
           <% if introduction.image.present? %>
-            <%= link_to image_tag(introduction.image.small.url, class: "img-responsive left-block  introduction-image"), introduction_path(introduction) %>
+            <%= link_to image_tag(introduction.image.small.url, class: "img-responsive center-block  introduction-image"), introduction_path(introduction) %>
           <% else %>
-            <%= link_to image_tag("http://placehold.it/250x250&text=No Pic", class: "img-responsive left-block introduction-image"), introduction_path(introduction) %>
+            <%= link_to image_tag("http://placehold.it/250x250&text=No Pic", class: "img-responsive center-block introduction-image"), introduction_path(introduction) %>
           <% end %>
 
-          <div class="text-left">
+          <div class="text-center">
             <%= link_to(introduction.title, introduction_path(introduction)) %>
           </div>
         <% end %>
@@ -93,7 +93,7 @@
     </div>
   </div>
 
-  <div class="row">
+  <div class="row index-content">
     <% @notices.each do |notice| %>
       <div class="col-xs-12 col-md-4 text">
           <div class="text-left">
@@ -116,14 +116,14 @@
     </div>
   </div>
 
-  <div class="row">
+  <div class="row index-content">
     <% @messages.each do |message| %>
       <div class="col-md-6 ">
         <div class="col-md-5 all_image_css">
           <% if message.image.present? %>
-            <%= link_to image_tag(message.image.small.url, class: "img-responsive left-block  introduction-image"), message_path(message) %>
+            <%= link_to image_tag(message.image.small.url, class: "img-responsive center-block  introduction-image"), message_path(message) %>
           <% else %>
-            <%= link_to image_tag("http://placehold.it/250x250&text=No Pic", class: "img-responsive left-block introduction-image"), message_path(message) %>
+            <%= link_to image_tag("http://placehold.it/250x250&text=No Pic", class: "img-responsive center-block introduction-image"), message_path(message) %>
           <% end %>
         </div>
         <div class="col-md-7">
