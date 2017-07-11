@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>个人中心</title>
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+    <div class="content">
+      <div class="container">
+        <%= render "common/navbar" %>
+        <%= render "common/flashes" %>
+        <div class="row">
+
+            <!-- 侧边分类选项栏 -->
+            <div class="col-md-2 nav-left-style">
+              <br><br><br>
+              <hr>
+              <div class="text-center">
+                <h5>我的账号</h5>
+                <p><%= current_user.email %></p>
+                <p><%= current_user.name %></p>
+              </div>
+              <hr>
+              <ul class="nav nav-pills nav-stacked text-center" style="max-width: 300px;">
+                <li><%= link_to("我的文章", account_message_collections_path) %></li>
+                <li><%= link_to("我要投稿", new_message_path) %></li>
+              </ul>
+              <hr>
+              <ul class="nav nav-pills nav-stacked text-center" style="max-width: 300px;">
+                <li><%= link_to("编辑账户", edit_account_user_path(current_user)) %></li>
+              </ul>
+              <hr>
+              <br><br><br>
+            </div>
+
+            <div class="col-md-10">
+              <%= yield %>
+            </div>
+
+      </div>
+    </div>
+
+    <%= render "common/footer" %>
+  </div>
+  </body>
+</html>

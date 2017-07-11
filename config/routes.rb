@@ -2,9 +2,18 @@ Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   devise_for :users, :controllers => { :registrations => "users/registrations"}
   root 'welcome#index'
+
   resources :introductions
+
   resources :notices
-  resources :messages
+
+  resources :messages do
+    member do
+      post :join
+      post :quit
+    end
+  end
+  
   resources :games
 
   namespace :admin do
@@ -21,5 +30,6 @@ Rails.application.routes.draw do
 
   namespace :account do
     resources :users
+    resources :message_collections
   end
 end
