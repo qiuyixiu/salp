@@ -30,7 +30,7 @@
     top: 50%;
     left: 50%;
     z-index: 3;                                       //元素堆叠等级3，将显示在最上层
-    color: #fff;
+    color: #F0E68C;
     text-align: center;
     text-transform: uppercase;                        //英文大写
     text-shadow: 0 0 5px #666;            //文字阴影 和 动态显示时间
@@ -108,15 +108,15 @@
   background-position: center center;
   background-repeat: no-repeat;
 }
-.fade-carousel .slides .slide-1 {
-  background-image: url(http://oon3erbcp.bkt.clouddn.com/pidiao1.jpeg);
-}
-.fade-carousel .slides .slide-2 {
-  background-image: url(http://oon3erbcp.bkt.clouddn.com/pidiao2.jpeg);
-}
-.fade-carousel .slides .slide-3 {
-  background-image: url(http://oon3erbcp.bkt.clouddn.com/pidiao3.jpeg);
-}
+// .fade-carousel .slides .slide-1 {
+//   background-image: url(http://oon3erbcp.bkt.clouddn.com/pidiao1.jpeg);
+// }
+// .fade-carousel .slides .slide-2 {
+//   background-image: url(http://oon3erbcp.bkt.clouddn.com/pidiao2.jpeg);
+// }
+// .fade-carousel .slides .slide-3 {
+//   background-image: url(http://oon3erbcp.bkt.clouddn.com/pidiao3.jpeg);
+// }
 
 /*  --- 响应式设置 ---  */
 @media screen and (min-width: 980px){
