@@ -1,9 +1,10 @@
 class WelcomeController < ApplicationController
   def index
-    @introductions = Introduction.all.page(params[:page]).per(3)
-    @notices = Notice.order("created_at DESC").page(params[:page]).per(12)
-    @messages = Message.where(:is_hidden => false).order("created_at DESC").page(params[:page]).per(12)
-    @games = Game.all.page(params[:page]).per(3)
+    @introductions = Introduction.order("updated_at DESC").page(params[:page]).per(3)
+    @notices = Notice.order("updated_at DESC").page(params[:page]).per(6)
+    @messages = Message.where(:is_hidden => false).order("updated_at DESC").page(params[:page]).per(3)
+    @offers = Offer.where(:is_hidden => false).order("updated_at DESC").page(params[:page]).per(3)
+    @games = Game.order("updated_at DESC").page(params[:page]).per(3)
   end
 
 

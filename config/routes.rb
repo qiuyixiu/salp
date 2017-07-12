@@ -13,7 +13,14 @@ Rails.application.routes.draw do
       post :quit
     end
   end
-  
+
+  resources :offers do
+    member do
+      post :join
+      post :quit
+    end
+  end
+
   resources :games
 
   namespace :admin do
@@ -25,11 +32,18 @@ Rails.application.routes.draw do
         post :hide
       end
     end
+    resources :offers do
+      member do
+        post :publish
+        post :hide
+      end
+    end
     resources :games
   end
 
   namespace :account do
     resources :users
     resources :message_collections
+    resources :offer_collections
   end
 end

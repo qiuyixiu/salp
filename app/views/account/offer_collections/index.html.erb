@@ -1,0 +1,59 @@
+<div class="account-box">
+
+  <h3 class="text-center">我点赞的招聘求职信息</h3>
+  <br>
+
+  <table class="table table">
+    <thead>
+      <tr>
+        <th>标题</th>
+        <th>作者</th>
+        <th>发布时间</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @offer_collections.each do |offer_collection| %>
+        <tr>
+          <td><%= link_to(offer_collection.title, offer_path(offer_collection)) %></td>
+          <td><%= offer_collection.user.name %></td>
+          <td><%= offer_collection.created_at %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>
+
+<br><br><br>
+
+<div class="account-box">
+
+  <h3 class="text-center">我投的招聘求职信息</h3>
+  <br>
+
+  <table class="table table">
+    <thead>
+      <tr>
+        <th>标题</th>
+        <th>作者</th>
+        <th>发布时间</th>
+        <th>状态</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @user_offers.each do |user_offer| %>
+        <tr>
+          <td><%= link_to(user_offer.title, offer_path(user_offer)) %></td>
+          <td><%= user_offer.user.name %></td>
+          <td><%= user_offer.created_at %></td>
+          <% if user_offer.is_hidden? %>
+            <td>审核中</td>
+          <% else %>
+            <td>已发布</td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>

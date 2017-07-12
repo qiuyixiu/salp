@@ -48,12 +48,14 @@ body {
 
 }
 
-.all_image_css {
+.all-image {
+  width: 500 !important;
+  height: 250 !important;
   transition: 0.8s;
 }
 
 
-.all_image_css:hover {
+.all-image:hover {
   filter:alpha(Opacity=100);
   -moz-opacity:0.4;
   opacity: 0.7;
@@ -100,7 +102,7 @@ img.avatar {
   }
 
 .introduction-image {
-  width: 250px;
+  width: 500px;
   height: 250px;
 }
 

@@ -29,6 +29,23 @@ class User < ApplicationRecord
     participated_messages.delete(message)
   end
 
+  has_many :offers
+
+  has_many :offer_collections
+  has_many :participated_offers, through: :offer_collections, source: :offer
+
+  def is_member_of?(offer)
+    participated_offers.include?(offer)
+  end
+
+  def join_offer_collection!(offer)
+    participated_offers << offer
+  end
+
+  def quit_offer_collection!(offer)
+    participated_offers.delete(offer)
+  end
+
   has_many :notices
 
   validates_uniqueness_of :name

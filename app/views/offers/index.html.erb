@@ -1,0 +1,39 @@
+
+<br><br><br>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h3 class="text-center">人才•伯乐</h3>
+      <hr>
+    </div>
+    <% @offers.each do |offer| %>
+      <div class="col-md-6 ">
+        <div class="col-md-5 all_image_css">
+          <% if offer.image.present? %>
+            <%= link_to image_tag(offer.image.small.url, class: "img-responsive center-block  introduction-image"), offer_path(offer) %>
+          <% else %>
+            <%= link_to image_tag("http://placehold.it/250x250&text=No Pic", class: "img-responsive center-block"), offer_path(offer) %>
+          <% end %>
+        </div>
+        <div class="col-md-7">
+          <%= link_to(offer.title, offer_path(offer), class: "text") %>
+          <div class="row offer-user">
+            <div class="col-md-6">
+              <span><%= offer.user.name %></span>
+            </div>
+            <div class="col-md-6">
+              <span><%= offer.created_at.to_s %></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+
+    <div class="col-md-12 text-center back-index">
+
+      <a href="/" style="font-size: 1.5em;"><i class="fa fa-hand-o-left fa-1x"></i>回到首页</a>
+
+    </div>
+  </div>
+</div>

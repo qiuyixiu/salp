@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row">
+    <br><br><br>
+    <div class="col-md-10">
+      <h3 class="text-center">人才伯乐列表</h3>
+    </div>
+    <br>
+    <div class="col-md-10">
+      <div>
+        <%= link_to("增加人才伯乐", new_admin_offer_path, class: "btn btn-sm btn-default pull-right") %>
+      </div>
+
+      <table class="table table-hover table-bordered table-responsive">
+        <thead>
+          <tr>
+            <td>标题</td>
+            <td>发布时间</td>
+            <td>操作</td>
+          </tr>
+        </thead>
+        <tbody>
+          <% @offers.each do |offer| %>
+            <tr>
+              <td>
+                <%= render_offer_status(offer) %>
+                <%= link_to(offer.title, offer_path(offer))  %>
+              </td>
+
+              <td><%= offer.created_at %></td>
+              <td>
+                <%= link_to("编辑", edit_admin_offer_path(offer)) %> |
+                <%= link_to("删除", admin_offer_path(offer), method: :delete, data: { confirm: "你确定要删除吗？"}) %>
+                <% if offer.is_hidden %>
+                  <%= link_to("发布", publish_admin_offer_path(offer), :method => :post, :class => "btn btn-xs btn-success") %>
+                <% else %>
+                  <%= link_to("隐藏", hide_admin_offer_path(offer), :method => :post, :class => "btn btn-xs btn-warning") %>
+                <% end %>
+
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
