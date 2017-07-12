@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   devise_for :users, :controllers => { :registrations => "users/registrations"}
   root 'welcome#index'
+  get 'ads/index'
 
   resources :introductions
 

@@ -4,7 +4,7 @@ class WelcomeController < ApplicationController
     @notices = Notice.order("updated_at DESC").page(params[:page]).per(6)
     @messages = Message.where(:is_hidden => false).order("updated_at DESC").page(params[:page]).per(3)
     @offers = Offer.where(:is_hidden => false).order("updated_at DESC").page(params[:page]).per(3)
-    @games = Game.order("updated_at DESC").page(params[:page]).per(3)
+    @games = Game.order("updated_at DESC").page(params[:page]).per(1)
   end
 
 

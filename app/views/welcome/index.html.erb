@@ -64,7 +64,7 @@
             <% if game.image.present? %>
               <%= link_to image_tag(game.image.large.url, class: "img-responsive center-block  game-image"), game_path(game) %>
             <% else %>
-              <%= link_to image_tag("http://placehold.it/800x600&text=No Pic", class: "img-responsive center-block"), game_path(game) %>
+              <%= link_to image_tag("http://placehold.it/1200x200&text=No Pic", class: "img-responsive center-block"), game_path(game) %>
             <% end %>
           <% end %>
         </div>
@@ -176,6 +176,6 @@
 
 <div class="row">
   <div class="col-md-12 text-center">
-    <%= link_to("广告招商", "#", class: "btn btn-md btn-warning", target: "_blank") %>
+    <%= link_to("广告招商", ads_index_path, class: "btn btn-md btn-warning", target: "_blank") %>
   </div>
 </div>
