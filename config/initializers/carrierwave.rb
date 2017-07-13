@@ -6,6 +6,6 @@ CarrierWave.configure do |config|
   config.aliyun_host          = ENV["aliyun_host"]
   config.aliyun_internal      = false
   config.aliyun_area          = "cn-shenzhen"
-  config.aliyun_private_read  = true
+  config.aliyun_private_read  = false
 
 end
