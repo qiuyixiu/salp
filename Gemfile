@@ -49,6 +49,7 @@ gem 'ransack'
 gem 'carrierwave-qiniu'
 gem 'qiniu-rs'
 gem 'figaro'
+gem 'rest-client'
 gem 'carrierwave-aliyun'
 
 
