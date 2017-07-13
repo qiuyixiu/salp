@@ -8,4 +8,5 @@ CarrierWave.configure do |config|
   config.aliyun_area          = "cn-shenzhen"
   config.aliyun_private_read  = false
 
+
 end
