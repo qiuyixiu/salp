@@ -27,7 +27,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   if Rails.env.production? #远端
     storage :aliyun
   elsif Rails.env.development? #本地
-    storage :file
+    storage :aliyun
   end
 
   # Override the directory where uploaded files will be stored.
