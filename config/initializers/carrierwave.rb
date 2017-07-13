@@ -1,11 +1,11 @@
 CarrierWave.configure do |config|
-  config.storage             = :qiniu
-  config.qiniu_access_key    = ENV["qiniu_access_key"]
-  config.qiniu_secret_key    = ENV["qiniu_secret_key"]
-  config.qiniu_bucket        = ENV["qiniu_bucket"]
-  config.qiniu_bucket_domain = ENV["qiniu_bucket_domain"]
-  config.qiniu_block_size    = 4*1024*1024
-  config.qiniu_protocol      = "http"
-  config.qiniu_up_host       = "http://up-z2.qiniu.com"  
+  config.storage              = :aliyun
+  config.aliyun_access_id     = "xxxxxx"
+  config.aliyun_access_key    = "xxxxxx"
+  config.aliyun_bucket        = "xxxx"
+  config.aliyun_host          = "xxxx"
+  config.aliyun_internal      = true
+  config.aliyun_area          = "cn-shenzhen"
+  config.aliyun_private_read  = true
 
 end

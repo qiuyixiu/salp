@@ -11,7 +11,7 @@ class CkeditorAttachmentFileUploader < CarrierWave::Uploader::Base
 
   # Choose what kind of storage to use for this uploader:
   if Rails.env.production? #远端
-    storage :qiniu
+    storage :aliyun
   elsif Rails.env.development? #本地
     storage :file
   end
