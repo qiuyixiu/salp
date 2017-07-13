@@ -1,19 +1,19 @@
- production:
-   aliyun_access_id: LTAIzWBBprgYPZeU
+production:
+  aliyun_access_id: LTAIzWBBprgYPZeU
 
-   aliyun_access_key: oPp7YDXd2X6yIvcTZWR8JAJD0Yyyk0
+  aliyun_access_key: oPp7YDXd2X6yIvcTZWR8JAJD0Yyyk0
 
-   aliyun_bucket: yixiu2017
+  aliyun_bucket: yixiu2017
 
-   aliyun_host: https://yixiu2017.oss-cn-shenzhen.aliyuncs.com
+  aliyun_host: https://yixiu2017.oss-cn-shenzhen.aliyuncs.com
 
 
 
- development:
-   aliyun_access_id: LTAIzWBBprgYPZeU
+development:
+  aliyun_access_id: LTAIzWBBprgYPZeU
 
-   aliyun_access_key: oPp7YDXd2X6yIvcTZWR8JAJD0Yyyk0
+  aliyun_access_key: oPp7YDXd2X6yIvcTZWR8JAJD0Yyyk0
 
-   aliyun_bucket: yixiu2017
+  aliyun_bucket: yixiu2017
 
-   aliyun_host: https://yixiu2017.oss-cn-shenzhen.aliyuncs.com
+  aliyun_host: https://yixiu2017.oss-cn-shenzhen.aliyuncs.com
