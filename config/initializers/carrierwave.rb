@@ -4,7 +4,7 @@ CarrierWave.configure do |config|
   config.aliyun_access_key    = "xxxxxx"
   config.aliyun_bucket        = "xxxx"
   config.aliyun_host          = "xxxx"
-  config.aliyun_internal      = true
+  config.aliyun_internal      = false
   config.aliyun_area          = "cn-shenzhen"
   config.aliyun_private_read  = true
 
