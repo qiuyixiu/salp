@@ -8,6 +8,10 @@ Rails.application.routes.draw do
 
   resources :notices
 
+
+  # 以下是测试链接
+  get 'test' => "welcome#test"
+
   resources :messages do
     member do
       post :join

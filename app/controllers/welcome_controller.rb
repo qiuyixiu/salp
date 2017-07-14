@@ -7,5 +7,9 @@ class WelcomeController < ApplicationController
     @games = Game.order("updated_at DESC").page(params[:page]).per(1)
   end
 
+  def test
+    @introductions = Introduction.all
+  end
+
 
 end
