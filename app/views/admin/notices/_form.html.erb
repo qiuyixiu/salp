@@ -1,7 +1,7 @@
 <%= simple_form_for [:admin, @notice] do |f| %>
   <div class="form-group">
     <%= f.input :title, :label => "标题" %>
-    <% if @notice.image.present? %>
+    <% if @notice.image.url.present? %>
       <span>目前封面图</span><br>
       <%= image_tag(@notice.image.small.url) %>
     <% end %>

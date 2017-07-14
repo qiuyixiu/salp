@@ -9,7 +9,7 @@
     <% @messages.each do |message| %>
       <div class="col-md-6 ">
         <div class="col-md-5 all_image_css">
-          <% if message.image.present? %>
+          <% if message.image.url.present? %>
             <%= link_to image_tag(message.image.small.url, class: "img-responsive center-block  introduction-image"), message_path(message) %>
           <% else %>
             <%= link_to image_tag("http://placehold.it/250x250&text=No Pic", class: "img-responsive center-block"), message_path(message) %>

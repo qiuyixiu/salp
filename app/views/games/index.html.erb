@@ -12,7 +12,7 @@
           <%= link_to(game.title, game_path(game)) %>
         </div>
         <%= link_to game_path(game) do %>
-          <% if game.image.present? %>
+          <% if game.image.url.present? %>
             <%= link_to image_tag(game.image.middle.url, class: "img-responsive center-block  game-image"), game_path(game) %>
           <% else %>
             <%= link_to image_tag("http://placehold.it/800x600&text=No Pic", class: "img-responsive center-block"), game_path(game) %>

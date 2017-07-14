@@ -6,7 +6,7 @@
 
         <!-- 当前头像 -->
         <div class="">
-          <% if @user.avatar.present? %>
+          <% if @user.avatar.url.present? %>
             <img width="200" height="200" src= "<%= render_user_avatar(current_user, 20) %>" class="avatar center-block">
 
           <% else %>

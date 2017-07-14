@@ -8,8 +8,11 @@
     </div>
     <% @introductions.each do |introduction| %>
       <div class="col-xs-12 col-md-4">
-        
-        <%= link_to image_tag(introduction.image.url, class: "img-responsive center-block  introduction-image"), introduction_path(introduction) %>
+        <% if introduction.image.url.present? %>
+          <%= link_to image_tag(introduction.image.small.url, class: "img-responsive center-blok  introduction-image"), introduction_path(introduction) %>
+        <% else %>
+            <%= link_to image_tag("http://placehold.it/250x250&text=No Pic", class: "img-responsive center-block"), introduction_path(introduction) %>
+        <% end %>
         <div class="text-center">
           <%= link_to(introduction.title, introduction_path(introduction)) %>
         </div>

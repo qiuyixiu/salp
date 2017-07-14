@@ -2,7 +2,7 @@
   <div class="form-group">
     <%= f.input :title, :label => "标题" %>
     <%= f.input :is_hidden, :label => "隐藏" %>
-    <% if @offer.image.present? %>
+    <% if @offer.image.url.present? %>
       <span>目前封面图</span><br>
       <%= image_tag(@offer.image.small.url) %>
     <% end %>

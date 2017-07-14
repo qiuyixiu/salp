@@ -1,7 +1,7 @@
 <%= simple_form_for [:admin, @game] do |f| %>
   <div class="form-group">
     <%= f.input :title, :label => "标题" %>
-    <% if @game.image.present? %>
+    <% if @game.image.url.present? %>
       <span>目前封面图</span><br>
       <%= image_tag(@game.image.small.url) %>
     <% end %>
