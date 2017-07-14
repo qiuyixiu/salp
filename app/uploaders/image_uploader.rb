@@ -24,11 +24,13 @@ class ImageUploader < CarrierWave::Uploader::Base
   # storage :file
   # storage :fog
 
-  if Rails.env.production? #远端
-    storage :aliyun
-  elsif Rails.env.development? #本地
-    storage :aliyun
-  end
+  # if Rails.env.production? #远端
+  #   storage :aliyun
+  # elsif Rails.env.development? #本地
+  #   storage :file
+  # end
+
+  storage :aliyun
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
