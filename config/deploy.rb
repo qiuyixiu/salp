@@ -12,7 +12,7 @@ require 'mina/rbenv'  # for rbenv support. (https://rbenv.org)
 #   branch       - Branch name to deploy. (needed by mina/git)
 
 set :application_name, 'salp'
-set :domain, 'apps@47.52.30.255'
+set :domain, 'apps@39.108.67.36'
 set :deploy_to, '/var/www/salp'
 set :repository, 'git://github.com/qiuyixiu/salp.git'
 set :branch, 'master'
