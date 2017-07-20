@@ -17,7 +17,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   version :large do
-    process resize_to_fill: [1200, 768]
+    process resize_to_fill: [1200, 368]
   end
 
   # Choose what kind of storage to use for this uploader:
