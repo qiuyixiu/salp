@@ -77,6 +77,8 @@ body {
 }
 
 
+
+
 .nav-container {
     display: flex;
     align-items: center;
@@ -102,9 +104,25 @@ img.avatar {
   }
 
 .introduction-image {
-  width: 500px;
-  height: 250px;
+  width: 80%;
+
 }
+
+.introduction-image:hover {
+  box-shadow: 5px 5px 10px rgba(255,253,231 ,1);
+}
+
+// .thumbnail-image {
+//
+//   border-radius:0;
+//   transition: box-shadow 0.5s;
+//   margin:  0 0px 0px 0px;
+// }
+//
+// .thumbnail-image:hover {
+//   box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+// }
+
 
 .back-index {
   margin: 100px auto;
