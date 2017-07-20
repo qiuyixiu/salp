@@ -154,9 +154,9 @@
         <div class="col-md-2">
             <%= link_to notice_path(notice) do %>
               <% if notice.image.url.present? %>
-                <%= link_to image_tag(notice.image.small.url, class: "img-responsive center-block  all-image"), notice_path(notice) %>
+                <%= link_to image_tag(notice.image.small.url, class: "img-responsive center-block  adv-image"), notice_path(notice) %>
               <% else %>
-                <%= link_to image_tag("http://placehold.it/500x250&text=No Pic", class: "img-responsive center-block all-image"), notice_path(notice) %>
+                <%= link_to image_tag("http://placehold.it/500x250&text=No Pic", class: "img-responsive center-block adv-image"), notice_path(notice) %>
               <% end %>
             <% end %>
             <div class="text-center">

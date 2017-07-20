@@ -13,7 +13,7 @@ class CkeditorAttachmentFileUploader < CarrierWave::Uploader::Base
   if Rails.env.production? #远端
     storage :aliyun
   elsif Rails.env.development? #本地
-    storage :aliyun
+    storage :file
   end
 
   # Override the directory where uploaded files will be stored.

@@ -5,19 +5,19 @@ class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
   version :thumb do
-    process resize_to_fit: [50, 50]
+    process resize_to_fill: [50, 50]
   end
 
   version :small do
-    process resize_to_fit: [250, 250]
+    process resize_to_fill: [250, 250]
   end
 
   version :middle do
-    process resize_to_fit: [800, 600]
+    process resize_to_fill: [800, 600]
   end
 
   version :large do
-    process resize_to_fit: [1200, 768]
+    process resize_to_fill: [1200, 368]
   end
 
   # Choose what kind of storage to use for this uploader:
@@ -27,7 +27,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   if Rails.env.production? #远端
     storage :aliyun
   elsif Rails.env.development? #本地
-    storage :aliyun
+    storage :file
   end
 
   # storage :aliyun
