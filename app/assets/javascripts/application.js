@@ -15,3 +15,24 @@
 //= require bootstrap.min
 //= require ckeditor/init
 //= require_tree .
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+
+// $(window).scroll(function () {
+//   if ($(this).scrollTop() > 500) {
+//     $('#img_wx').fadeIn() // 当页面向下滚动的距离大于500px时，慢慢地显示「回到顶部按钮」
+//   } else {
+//     $('#img_wx').fadeOut() // 否则慢慢地隐藏「回到顶部按钮」
+//   }
+// })
+//
+//  $("#img_wx").imgFloat({
+//    speed : 15,
+//    xPos : 10,
+//    yPos : 10
+//  });
+//  $(".reset").click(function() {
+//    $("#img_wx").css("display", "none");
+//  });
