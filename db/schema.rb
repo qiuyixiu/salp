@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170712043929) do
+ActiveRecord::Schema.define(version: 20170815085252) do
 
   create_table "ckeditor_assets", force: :cascade do |t|
     t.string   "data_file_name",               null: false
@@ -22,6 +22,24 @@ ActiveRecord::Schema.define(version: 20170712043929) do
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
     t.index ["type"], name: "index_ckeditor_assets_on_type"
+  end
+
+  create_table "educations", force: :cascade do |t|
+    t.string   "title"
+    t.string   "image"
+    t.text     "description"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "exchanges", force: :cascade do |t|
+    t.string   "title"
+    t.string   "image"
+    t.text     "description"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "games", force: :cascade do |t|
@@ -59,6 +77,15 @@ ActiveRecord::Schema.define(version: 20170712043929) do
     t.index ["user_id"], name: "index_impressions_on_user_id"
   end
 
+  create_table "industries", force: :cascade do |t|
+    t.string   "title"
+    t.string   "image"
+    t.text     "description"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "infomrations", force: :cascade do |t|
     t.string   "title"
     t.string   "image"
@@ -82,6 +109,15 @@ ActiveRecord::Schema.define(version: 20170712043929) do
     t.datetime "updated_at",  null: false
     t.string   "image"
     t.integer  "user_id"
+  end
+
+  create_table "lists", force: :cascade do |t|
+    t.string   "title"
+    t.string   "image"
+    t.text     "description"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "message_collections", force: :cascade do |t|
@@ -150,6 +186,15 @@ ActiveRecord::Schema.define(version: 20170712043929) do
   create_table "welcomes", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "works", force: :cascade do |t|
+    t.string   "title"
+    t.string   "image"
+    t.text     "description"
+    t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end

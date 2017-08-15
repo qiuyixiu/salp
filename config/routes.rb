@@ -23,6 +23,11 @@ Rails.application.routes.draw do
   end
 
   resources :games
+  resources :industries
+  resources :educations
+  resources :lists
+  resources :works
+  resources :exchanges
 
   namespace :admin do
     resources :introductions
@@ -40,6 +45,11 @@ Rails.application.routes.draw do
       end
     end
     resources :games
+    resources :industries
+    resources :educations
+    resources :lists
+    resources :works
+    resources :exchanges
   end
 
   namespace :account do

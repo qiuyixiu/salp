@@ -122,13 +122,13 @@
     <div class="col-md-2 col-md-offset-1 col-xs-4">
       <h4 class="text-center">国内外作品交流</h4>
       <br>
-      <% @messages.each do |message| %>
+      <% @exchanges.each do |exchange| %>
           <div class="col-md-12">
-            <%= link_to(message.title, message_path(message), class: "text") %>
+            <%= link_to(exchange.title, exchange_path(exchange), class: "text") %>
           </div>
       <% end %>
       <div class="col-md-12">
-        <%= link_to("更多 >>", messages_path, class: "pull-left") %>
+        <%= link_to("更多 >>", exchanges_path, class: "pull-left") %>
       </div>
     </div>
 
@@ -168,7 +168,7 @@
 <hr>
 <div class="row">
   <div class="col-md-12 text-center">
-    <%= link_to("各地皮雕培训、体验", ads_index_path, class: "btn btn-md btn-warning", target: "_blank") %>
+    <%= link_to("各地皮雕培训、体验", educations_path, class: "btn btn-md btn-warning", target: "_blank") %>
   </div>
 </div>
 

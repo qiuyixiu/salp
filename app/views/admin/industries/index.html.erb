@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row">
+    <br><br><br>
+    <div class="col-md-10">
+      <h3 class="text-center">行业资讯列表</h3>
+    </div>
+    <br>
+    <div class="col-md-10">
+      <div>
+        <%= link_to("增加行业资讯", new_admin_industry_path, class: "btn btn-sm btn-default pull-right") %>
+      </div>
+
+      <table class="table table-hover table-bordered table-responsive">
+        <thead>
+          <tr>
+            <td>标题</td>
+            <td>发布时间</td>
+            <td>操作</td>
+          </tr>
+        </thead>
+        <tbody>
+          <% @industries.each do |industry| %>
+            <tr>
+              <td><%= link_to(industry.title, industry_path(industry))  %></td>
+
+              <td><%= industry.created_at %></td>
+              <td>
+                <%= link_to("编辑", edit_admin_industry_path(industry)) %> |
+                <%= link_to("删除", admin_industry_path(industry), method: :delete, data: { confirm: "你确定要删除吗？"}) %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

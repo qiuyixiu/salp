@@ -1,0 +1,24 @@
+
+<br><br><br>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h3 class="text-center">广告</h3>
+      <hr>
+    </div>
+    <% @industries.each do |industry| %>
+      <div class="col-xs-12 col-md-6 text">
+          <div class="text-left">
+            <li><%= link_to(industry.title, industry_path(industry)) %>(<%= industry.created_at.to_s %>)</li>
+          </div>
+      </div>
+    <% end %>
+    <div class="text-center">
+      <%= paginate @industries %>
+    </div>
+    <div class="col-md-12 text-center back-index">
+      <a href="/" style="font-size: 1.5em;"><i class="fa fa-hand-o-left fa-1x"></i>回到首页</a>
+    </div>
+
+  </div>
+</div>

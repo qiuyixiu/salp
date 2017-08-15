@@ -48,6 +48,16 @@ class User < ApplicationRecord
 
   has_many :notices
 
+  has_many :educations
+
+  has_many :exchanges
+
+  has_many :industries
+
+  has_many :lists
+
+  has_many :works
+
   validates_uniqueness_of :name
 
   mount_uploader :avatar, ImageUploader

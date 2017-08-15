@@ -1,0 +1,13 @@
+<br><br><br>
+<div class="container">
+  <div class="row">
+    <h2 class="text-center"><%= @exchange.title %></h2>
+  </div>
+  <br><br><br>
+  <div class="description">
+    <%= sanitize @exchange.description %>
+  </div>
+  总浏览量： <%= @exchange.impressionist_count %>
+  <br>
+  <%= link_to(content_tag(:i, "返回上一页", class: "fa fa-hand-o-left"), exchanges_path) %>
+</div>
