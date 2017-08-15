@@ -77,71 +77,98 @@
 <div class="container">
   <div class="row topspan">
     <!-- 了解促进会区域 -->
-    <div class="col-md-4">
-      <h3 class="text-center">了解促进会</h3>
+    <div class="col-md-2 col-xs-6">
+      <h4 class="text-center">了解促进会</h4>
       <br>
       <% @introductions.each do |introduction| %>
-        <div class="col-md-7">
-            <% if introduction.image.url.present? %>
-              <%= link_to image_tag(introduction.image.middle.url, class: "img-responsive center-block  all-image"), introduction_path(introduction) %>
-            <% else %>
-              <%= link_to image_tag("http://placehold.it/500x250&text=No Pic", class: "img-responsive center-block all-image"), introduction_path(introduction) %>
-            <% end %>
-            <hr>
-        </div>
-        <div class="col-md-5">
+        <div class="col-md-12">
           <%= link_to(introduction.title, introduction_path(introduction)) %>
         </div>
       <% end %>
-      <div class="col-md-6">
+      <div class="col-md-12">
         <%= link_to("更多 >>", introductions_path, class: "pull-left") %>
       </div>
     </div>
 
-    <!-- 促进会动态区域 -->
-    <div class="col-md-4">
-      <h3 class="text-center">促进会动态</h3>
+    <!-- 本会动态区域 -->
+    <div class="col-md-2 col-xs-6">
+      <h4 class="text-center">促进会动态</h4>
       <br>
       <% @messages.each do |message| %>
-          <div class="col-md-7">
-            <% if message.image.url.present? %>
-              <%= link_to image_tag(message.image.middle.url, class: "img-responsive center-block  all-image"), message_path(message) %>
-            <% else %>
-              <%= link_to image_tag("http://placehold.it/500x250&text=No Pic", class: "img-responsive center-block all-image"), message_path(message) %>
-            <% end %>
-            <hr>
-          </div>
-          <div class="col-md-5">
+          <div class="col-md-12">
             <%= link_to(message.title, message_path(message), class: "text") %>
           </div>
       <% end %>
-      <div class="col-md-6">
+      <div class="col-md-12">
+        <%= link_to("更多 >>", messages_path, class: "pull-left") %>
+      </div>
+    </div>
+
+    <!-- 行业资讯区域 -->
+    <div class="col-md-2 col-xs-4">
+      <h4 class="text-center">行业资讯</h4>
+      <br>
+      <% @messages.each do |message| %>
+          <div class="col-md-12">
+            <%= link_to(message.title, message_path(message), class: "text") %>
+          </div>
+      <% end %>
+      <div class="col-md-12">
+        <%= link_to("更多 >>", messages_path, class: "pull-left") %>
+      </div>
+    </div>
+
+    <!-- 国内外作品交流区域 -->
+    <div class="col-md-2 col-md-offset-1 col-xs-4">
+      <h4 class="text-center">国内外作品交流</h4>
+      <br>
+      <% @messages.each do |message| %>
+          <div class="col-md-12">
+            <%= link_to(message.title, message_path(message), class: "text") %>
+          </div>
+      <% end %>
+      <div class="col-md-12">
         <%= link_to("更多 >>", messages_path, class: "pull-left") %>
       </div>
     </div>
 
     <!-- 人才伯乐区域 -->
-    <div class="col-md-4">
-      <h3 class="text-center">人才•伯乐</h3>
+    <div class="col-md-2 col-md-offset-1 col-xs-4 ">
+      <h4 class="text-center">人才•伯乐</h4>
       <br>
       <% @offers.each do |offer| %>
-          <div class="col-md-7">
-            <% if offer.image.url.present? %>
-              <%= link_to image_tag(offer.image.middle.url, class: "img-responsive center-block  all-image"), offer_path(offer) %>
-            <% else %>
-              <%= link_to image_tag("http://placehold.it/500x250&text=No Pic", class: "img-responsive center-block all-image"), offer_path(offer) %>
-            <% end %>
-            <hr>
-          </div>
-          <div class="col-md-5">
+          <div class="col-md-12">
             <%= link_to(offer.title, offer_path(offer), class: "text") %>
           </div>
 
       <% end %>
-      <div class="col-md-6">
+      <div class="col-md-12">
         <%= link_to("更多 >>", offers_path, class: "pull-left") %>
       </div>
     </div>
+  </div>
+</div>
+
+<!-- 2017比赛作品区域 -->
+<hr>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="col-md-6">
+        <h4 class="text-left">2017首届皮雕艺术大赛部分作品欣赏</h4>
+      </div>
+      <div class="col-md-6">
+        <h4 class="text-right">2017首届皮雕艺术大赛获奖作品名单</h4>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 各地培训信息区域 -->
+<hr>
+<div class="row">
+  <div class="col-md-12 text-center">
+    <%= link_to("各地皮雕培训、体验", ads_index_path, class: "btn btn-md btn-warning", target: "_blank") %>
   </div>
 </div>
 
@@ -182,3 +209,28 @@
 </div>
 
 <!-- 协会链接区域 -->
+<hr>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="text-center">
+        <h4>相关协会</h4>
+      </div>
+      <div class="col-md-4 text-right">
+        <%= link_to("深圳市工艺美术行业协会", "http://www.artcraft.com.cn/",  target: "_blank") %>
+      </div>
+      <div class="col-md-4 text-center">
+        <%= link_to("深圳市皮革行业协会", "http://www.szleather.com/",  target: "_blank") %>
+      </div>
+      <div class="col-md-4 text-left">
+        <%= link_to("中国工艺美术协会", "http://www.cnaca.org/",  target: "_blank") %>
+      </div>
+      <div class="col-md-6 text-right">
+        <%= link_to("日本革工艺会", "#") %>
+      </div>
+      <div class="col-md-6 text-left">
+        <%= link_to("美国皮雕联合会", "#") %>
+      </div>
+    </div>
+  </div>
+</div>
