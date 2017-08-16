@@ -65,12 +65,20 @@ body {
 //-----navbar------
 .navbar-style {
   background: #F0E68C;
-  height: 50px;
+  height: 60px;
 }
 
-.navbar-brand {
-    letter-spacing: 0.1em;                              //拉开一点点字间距
-  }
+// .navbar-brand {
+//     letter-spacing: 0.1em;                              //拉开一点点字间距
+//   }
+
+.navbar-brand > img {
+          display: inline-block; //图片和链接文字显示在同一行
+          margin-right: 10px; //图片和链接文字拉开一点距离
+          margin-top: -3px;
+          width: 25px; //定制图片宽度
+          height: 50px; //定制图片高度
+      }
 
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
     background-color: white;
@@ -79,11 +87,11 @@ body {
 
 
 
-.nav-container {
-    display: flex;
-    align-items: center;
-
-}
+// .nav-container {
+//     display: flex;
+//     align-items: center;
+//
+// }
 
 img.avatar {
   border-radius: 50%;

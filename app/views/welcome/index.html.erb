@@ -196,7 +196,7 @@
 <div class="container">
   <div class="row topspan">
     <!-- 了解促进会区域 -->
-    <div class="col-md-2 col-xs-6">
+    <div class="col-md-3 col-xs-3">
       <h4 class="text-center">了解促进会</h4>
       <br>
       <table class="table table-striped">
@@ -216,7 +216,7 @@
     </div>
 
     <!-- 本会动态区域 -->
-    <div class="col-md-2 col-xs-6 index-border" >
+    <div class="col-md-3 col-xs-3 index-border" >
       <h4 class="text-center">本会动态</h4>
       <br>
       <table class="table table-striped">
@@ -236,7 +236,7 @@
     </div>
 
     <!-- 行业资讯区域 -->
-    <div class="col-md-2 col-xs-4" >
+    <div class="col-md-3 col-xs-3" >
       <h4 class="text-center">行业资讯</h4>
       <br>
       <table class="table table-striped">
@@ -256,7 +256,7 @@
     </div>
 
     <!-- 国内外作品交流区域 -->
-    <div class="col-md-2 col-md-offset-1 col-xs-4" >
+    <div class="col-md-3 col-xs-3" >
       <h4 class="text-center">国内外作品交流</h4>
       <br>
       <table class="table table-striped">
@@ -276,7 +276,7 @@
     </div>
 
     <!-- 人才伯乐区域 -->
-    <div class="col-md-2 col-md-offset-1 col-xs-4" >
+    <!-- <div class="col-md-2  col-xs-4" >
       <h4 class="text-center">人才•伯乐</h4>
       <br>
       <table class="table table-striped">
@@ -293,21 +293,26 @@
       <div class="col-md-12">
         <%= link_to("更多 >>", offers_path, class: "pull-left") %>
       </div>
-    </div>
+    </div> -->
   </div>
 </div>
 
-<!-- 2017比赛作品区域 -->
+<!-- 人才伯乐及2017比赛作品区域 -->
 <hr>
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <div class="col-md-6">
+      <div class="col-md-3 col-xs-4">
         <h4 class="text-left">
+          <%= link_to("人才•伯乐", offers_path) %>
+        </h4>
+      </div>
+      <div class="col-md-4  col-xs-4">
+        <h4 class="text-center">
           <%= link_to("2017首届皮雕艺术大赛部分作品欣赏", works_path) %>
         </h4>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-4 col-xs-4">
         <h4 class="text-right">
           <%= link_to("2017首届皮雕艺术大赛获奖作品名单", lists_path) %>
         </h4>
