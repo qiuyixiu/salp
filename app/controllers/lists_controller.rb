@@ -2,7 +2,7 @@ class ListsController < ApplicationController
   impressionist
 
   def index
-    @lists = List.all
+    @lists = List.order("created_at DESC").page(params[:page]).per(20)
   end
 
   def show

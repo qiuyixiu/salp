@@ -1,3 +1,122 @@
+<!--飘窗广告区域-->
+<style type="text/css">
+  #img {
+  position: absolute;
+  background: url(http://yixiu2017.oss-cn-shenzhen.aliyuncs.com/rbggyz2.jpg) no-repeat;
+  width: 200px;
+  height: 200px;
+  }
+  #img a {
+  text-decoration: none;
+  color: green;
+  display: block;
+  text-align: center;
+  line-height: 20px;
+  padding: 95px 5px;
+  }
+  #img .reset {
+  position: absolute;
+  top: -17px;
+  right: 1px;
+  font-size: 12px;
+  }
+</style>
+
+<div id="img" style="z-index: 100; position: absolute; cursor: pointer; left: 894px; top: 458px;">
+ <a href="http://www.szleathercraft.com/messages/7" target="_blank"></a>
+ <div class="reset">关闭×</div>
+</div>
+
+<script language="javascript" type="text/javascript">
+/*
+*   jQuery Plugins imgFloat v1011
+* 使用说明：
+*   speed //元素移动速度
+*   xPos  //元素一开始左距离
+*   yPos  //元素一开始上距离
+*   $('#div1').imgFloat({speed:30,xPos:10,yPos:10});
+*   $('#div2').imgFloat();   //不给参数默认（speed:15,xPos:0,yPos:0）
+*/
+(function($) {
+ jQuery.fn.imgFloat = function(options) {
+   var own = this;
+   var xD = 0;
+   var yD = 0;
+   var i = 1;
+   var settings = {
+     speed : 15,
+     xPos : 0,
+     yPos : 0
+   };
+   jQuery.extend(settings, options);
+   var ownTop = settings.xPos;
+   var ownLeft = settings.yPos;
+   own.css({
+     position : "absolute",
+     cursor : "pointer"
+   });
+   function imgPosition() {
+     var winWidth = $(window).width() - own.width();
+     var winHeight = $(window).height() - own.height();
+     if (xD == 0) {
+       ownLeft += i;
+       own.css({
+         left : ownLeft
+       });
+       if (ownLeft >= winWidth) {
+         ownLeft = winWidth;
+         xD = 1;
+       }
+     }
+     if (xD == 1) {
+       ownLeft -= i;
+       own.css({
+         left : ownLeft
+       });
+       if (ownLeft <= 0)
+         xD = 0;
+     }
+     if (yD == 0) {
+       ownTop += i;
+       own.css({
+         top : ownTop
+       });
+       if (ownTop >= winHeight) {
+         ownTop = winHeight;
+         yD = 1;
+       }
+     }
+     if (yD == 1) {
+       ownTop -= i;
+       own.css({
+         top : ownTop
+       });
+       if (ownTop <= 0)
+         yD = 0;
+     }
+   }
+   var imgHover = setInterval(imgPosition, settings.speed);
+   own.hover(function() {
+     clearInterval(imgHover);
+   }, function() {
+     imgHover = setInterval(imgPosition, settings.speed);
+   });
+ }
+})(jQuery);
+</script>
+<script language="javascript" type="text/javascript">
+ //$("#img").imgFloat();   //不给参数默认（speed:10,xPos:0,yPos:0）
+ $("#img").imgFloat({
+   speed : 15,
+   xPos : 10,
+   yPos : 10
+ });
+ $(".reset").click(function() {
+   $("#img").css("display", "none");
+ });
+</script>
+
+
 <!-- 滚动图区域 -->
 <div class="row">
   <div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
@@ -80,68 +199,97 @@
     <div class="col-md-2 col-xs-6">
       <h4 class="text-center">了解促进会</h4>
       <br>
-      <% @introductions.each do |introduction| %>
-        <div class="col-md-12">
-          <%= link_to(introduction.title, introduction_path(introduction)) %>
-        </div>
-      <% end %>
+      <table class="table table-striped">
+        <% @introductions.each do |introduction| %>
+          <div class="col-md-12">
+            <tr>
+              <td>
+                <%= link_to(introduction.title, introduction_path(introduction)) %>
+              </td>
+            </tr>
+          </div>
+        <% end %>
+      </table>
       <div class="col-md-12">
         <%= link_to("更多 >>", introductions_path, class: "pull-left") %>
       </div>
     </div>
 
     <!-- 本会动态区域 -->
-    <div class="col-md-2 col-xs-6">
-      <h4 class="text-center">促进会动态</h4>
+    <div class="col-md-2 col-xs-6 index-border" >
+      <h4 class="text-center">本会动态</h4>
       <br>
-      <% @messages.each do |message| %>
-          <div class="col-md-12">
-            <%= link_to(message.title, message_path(message), class: "text") %>
-          </div>
-      <% end %>
+      <table class="table table-striped">
+        <% @messages.each do |message| %>
+            <div class="col-md-12">
+              <tr>
+                <td>
+                  <%= link_to(message.title, message_path(message)) %>
+                </td>
+              </tr>
+            </div>
+        <% end %>
+      </table>
       <div class="col-md-12">
         <%= link_to("更多 >>", messages_path, class: "pull-left") %>
       </div>
     </div>
 
     <!-- 行业资讯区域 -->
-    <div class="col-md-2 col-xs-4">
+    <div class="col-md-2 col-xs-4" >
       <h4 class="text-center">行业资讯</h4>
       <br>
-      <% @messages.each do |message| %>
-          <div class="col-md-12">
-            <%= link_to(message.title, message_path(message), class: "text") %>
-          </div>
-      <% end %>
+      <table class="table table-striped">
+        <% @industries.each do |industry| %>
+            <div class="col-md-12">
+              <tr>
+                <td>
+                  <%= link_to(industry.title, industry_path(industry)) %>
+                </td>
+              </tr>
+            </div>
+        <% end %>
+      </table>
       <div class="col-md-12">
-        <%= link_to("更多 >>", messages_path, class: "pull-left") %>
+        <%= link_to("更多 >>", industries_path, class: "pull-left") %>
       </div>
     </div>
 
     <!-- 国内外作品交流区域 -->
-    <div class="col-md-2 col-md-offset-1 col-xs-4">
+    <div class="col-md-2 col-md-offset-1 col-xs-4" >
       <h4 class="text-center">国内外作品交流</h4>
       <br>
-      <% @exchanges.each do |exchange| %>
-          <div class="col-md-12">
-            <%= link_to(exchange.title, exchange_path(exchange), class: "text") %>
-          </div>
-      <% end %>
+      <table class="table table-striped">
+        <% @exchanges.each do |exchange| %>
+            <div class="col-md-12">
+              <tr>
+                <td>
+                  <%= link_to(exchange.title, exchange_path(exchange)) %>
+                </td>
+              </tr>
+            </div>
+        <% end %>
+      </table>
       <div class="col-md-12">
         <%= link_to("更多 >>", exchanges_path, class: "pull-left") %>
       </div>
     </div>
 
     <!-- 人才伯乐区域 -->
-    <div class="col-md-2 col-md-offset-1 col-xs-4 ">
+    <div class="col-md-2 col-md-offset-1 col-xs-4" >
       <h4 class="text-center">人才•伯乐</h4>
       <br>
-      <% @offers.each do |offer| %>
-          <div class="col-md-12">
-            <%= link_to(offer.title, offer_path(offer), class: "text") %>
-          </div>
-
-      <% end %>
+      <table class="table table-striped">
+        <% @offers.each do |offer| %>
+            <div class="col-md-12">
+              <tr>
+                <td>
+                  <%= link_to(offer.title, offer_path(offer)) %>
+                </td>
+              </tr>
+            </div>
+        <% end %>
+      </table>
       <div class="col-md-12">
         <%= link_to("更多 >>", offers_path, class: "pull-left") %>
       </div>
@@ -155,10 +303,14 @@
   <div class="row">
     <div class="col-md-12">
       <div class="col-md-6">
-        <h4 class="text-left">2017首届皮雕艺术大赛部分作品欣赏</h4>
+        <h4 class="text-left">
+          <%= link_to("2017首届皮雕艺术大赛部分作品欣赏", works_path) %>
+        </h4>
       </div>
       <div class="col-md-6">
-        <h4 class="text-right">2017首届皮雕艺术大赛获奖作品名单</h4>
+        <h4 class="text-right">
+          <%= link_to("2017首届皮雕艺术大赛获奖作品名单", lists_path) %>
+        </h4>
       </div>
     </div>
   </div>
@@ -168,7 +320,7 @@
 <hr>
 <div class="row">
   <div class="col-md-12 text-center">
-    <%= link_to("各地皮雕培训、体验", educations_path, class: "btn btn-md btn-warning", target: "_blank") %>
+    <%= link_to("各地皮雕培训、体验", educations_path, class: "btn btn-md btn-info", target: "_blank") %>
   </div>
 </div>
 
@@ -179,12 +331,12 @@
     <div class="col-md-12">
       <h5>促进会部分优秀会员单位</h5>
       <% @notices.each do |notice| %>
-        <div class="col-md-2">
+        <div class="col-md-4">
             <%= link_to notice_path(notice) do %>
               <% if notice.image.url.present? %>
-                <%= link_to image_tag(notice.image.small.url, class: "img-responsive center-block  adv-image"), notice_path(notice) %>
+                <%= link_to image_tag(notice.image.ad.url, class: "img-responsive center-block  adv-image"), notice_path(notice) %>
               <% else %>
-                <%= link_to image_tag("http://placehold.it/500x250&text=No Pic", class: "img-responsive center-block adv-image"), notice_path(notice) %>
+                <%= link_to image_tag("http://placehold.it/120x50&text=No Pic", class: "img-responsive center-block adv-image"), notice_path(notice) %>
               <% end %>
             <% end %>
             <div class="text-center">

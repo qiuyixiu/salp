@@ -62,22 +62,27 @@
             <!-- 侧边分类选项栏 -->
             <div class="col-md-2 nav-left-style">
               <ul class="nav nav-pills nav-stacked text-center" style="max-width: 300px;">
-                <br><br><br>
-                <li><%= link_to("了解促进会管理", admin_introductions_path) %></li>
+                <br><br>
+                <%= link_to("皮雕大赛", admin_games_path) %>
                 <hr>
-                <li><%= link_to("人才伯乐管理", admin_offers_path) %></li>
+                <%= link_to("了解促进会", admin_introductions_path) %>
                 <hr>
-                <li><%= link_to("促进会动态管理", admin_messages_path) %></li>
+                <%= link_to("促进会动态", admin_messages_path) %>
                 <hr>
-                <li><%= link_to("行业资讯管理", admin_industries_path) %></li>
+                <%= link_to("行业资讯", admin_industries_path) %>
                 <hr>
-                <li><%= link_to("皮雕大赛管理", admin_games_path) %></li>
+                <%= link_to("国内外作品交流", admin_exchanges_path) %>
                 <hr>
-                <li><%= link_to("国内外作品交流管理", admin_exchanges_path) %></li>
+                <%= link_to("人才伯乐", admin_offers_path) %>
                 <hr>
-                <li><%= link_to("广告管理", admin_notices_path) %></li>
+                <%= link_to("参赛作品欣赏", admin_works_path) %>
                 <hr>
-                <li><%= link_to("回到前台", root_path) %></li>
+                <%= link_to("获奖作品名单", admin_lists_path) %>
+                <hr>
+                <%= link_to("各地皮雕培训", admin_educations_path) %>
+                <hr>
+                <%= link_to("广告", admin_notices_path) %>
+
               </ul>
             </div>
 

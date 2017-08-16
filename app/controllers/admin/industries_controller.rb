@@ -23,7 +23,7 @@ class Admin::IndustriesController < ApplicationController
     @industry = Industry.new(industry_params)
     @industry.user = current_user
     if @industry.save
-      redirect_to admin_industrys_path
+      redirect_to admin_industries_path
     else
       render :new
     end
@@ -32,7 +32,7 @@ class Admin::IndustriesController < ApplicationController
   def update
     @industry = Industry.find(params[:id])
     if @industry.update(industry_params)
-      redirect_to admin_industrys_path
+      redirect_to admin_industries_path
     else
       render :edit
     end
@@ -41,7 +41,7 @@ class Admin::IndustriesController < ApplicationController
   def destroy
     @industry = Industry.find(params[:id])
     @industry.destroy
-    redirect_to admin_industrys_path
+    redirect_to admin_industries_path
   end
 
   private

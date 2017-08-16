@@ -3,13 +3,20 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <h3 class="text-center">获奖作品</h3>
+      <h3 class="text-center">参赛作品欣赏</h3>
       <hr>
     </div>
     <% @works.each do |work| %>
-      <div class="col-xs-12 col-md-6 text">
+      <div class="col-xs-2 col-md-3 text">
+         <%= link_to work_path(work) do %>
+            <% if work.image.url.present? %>
+              <%= image_tag(work.image.small.url, class: "thumbnail") %>
+            <% else %>
+              <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+            <% end %>
+          <% end %>
           <div class="text-left">
-            <li><%= link_to(work.title, work_path(work)) %>(<%= work.created_at.to_s %>)</li>
+            <%= link_to(work.title, work_path(work)) %>
           </div>
       </div>
     <% end %>

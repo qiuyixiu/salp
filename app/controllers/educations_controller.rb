@@ -2,7 +2,7 @@ class EducationsController < ApplicationController
   impressionist
 
   def index
-    @educations = Education.all
+    @educations = Education.order("created_at DESC").page(params[:page]).per(20)
   end
 
   def show

@@ -2,7 +2,7 @@ class WorksController < ApplicationController
   impressionist
 
   def index
-    @works = Work.all
+    @works = Work.order("created_at DESC").page(params[:page]).per(20)
   end
 
   def show

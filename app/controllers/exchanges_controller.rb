@@ -2,7 +2,7 @@ class ExchangesController < ApplicationController
   impressionist
 
   def index
-    @exchanges = Exchange.all
+    @exchanges = Exchange.order("created_at DESC").page(params[:page]).per(20)
   end
 
   def show

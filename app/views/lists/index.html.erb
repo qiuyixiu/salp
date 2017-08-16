@@ -3,13 +3,19 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <h3 class="text-center">广告</h3>
+      <h3 class="text-center">获奖作品名单</h3>
       <hr>
     </div>
     <% @lists.each do |list| %>
-      <div class="col-xs-12 col-md-6 text">
+      <div class="col-xs-2 col-md-3 text">
+        <%= link_to list_path(list) do %>
+
+         <% end %>
           <div class="text-left">
-            <li><%= link_to(list.title, list_path(list)) %>(<%= list.created_at.to_s %>)</li>
+            <%= link_to(list.title, list_path(list)) %>
+          </div>
+          <div class="description">
+            <%= sanitize list.description %>
           </div>
       </div>
     <% end %>
