@@ -65,7 +65,7 @@ body {
 //-----navbar------
 .navbar-style {
   background: #F0E68C;
-  height: 60px;
+  height: 50px;
 }
 
 // .navbar-brand {
@@ -80,18 +80,21 @@ body {
           height: 50px; //定制图片高度
       }
 
-.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
-    background-color: white;
+// .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+//     background-color: white;
+// }
+
+.navbar-nav {
+  background: #F0E68C;
 }
 
 
 
+.nav-container {
+    display: flex;
+    align-items: center;
 
-// .nav-container {
-//     display: flex;
-//     align-items: center;
-//
-// }
+}
 
 img.avatar {
   border-radius: 50%;
