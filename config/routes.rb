@@ -27,7 +27,9 @@ Rails.application.routes.draw do
   resources :educations
   resources :lists
   resources :works
-  resources :exchanges
+  resources :exchanges do
+    resources :comments
+  end
 
   namespace :admin do
     resources :introductions

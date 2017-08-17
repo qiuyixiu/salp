@@ -58,6 +58,8 @@ class User < ApplicationRecord
 
   has_many :works
 
+  has_many :comments
+
   validates_uniqueness_of :name
 
   mount_uploader :avatar, ImageUploader

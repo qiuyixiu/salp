@@ -7,6 +7,7 @@ class ExchangesController < ApplicationController
 
   def show
     @exchange = Exchange.find(params[:id])
+    @comments = @exchange.comments
     impressionist(@exchange)
   end
 end
