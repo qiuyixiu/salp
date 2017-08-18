@@ -1,12 +1,31 @@
 <%= simple_form_for [:admin, @game] do |f| %>
-  <div class="form-group">
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
     <%= f.input :title, :label => "标题" %>
     <% if @game.image.url.present? %>
-      <span>目前封面图</span><br>
-      <%= image_tag(@game.image.small.url) %>
+     <span>目前封面图</span><br>
+     <%= image_tag(@game.image.small.url) %>
     <% end %>
     <%= f.input :image,  as: :file, :label => "封面" %>
-    <%= f.input :description, as: :ckeditor, :label => "内容" %>
+    <div style="display: none;">
+      <%= f.input :description, :label => "内容" %>
+    </div>
+    <div id="editor">
+      <%== @game.description %>
+    </div>
   </div>
+
   <%= f.submit "提交", class: "btn btn-sm btn-default", data: {disable_with: "Submiting..."} %>
+
 <% end %>
+
+<script>
+  var E = window.wangEditor
+  var editor = new E('#editor')
+  editor.customConfig.uploadImgShowBase64 = true
+  editor.customConfig.onchange = function (description) {
+    $("#game_description").html(description)
+  }
+  editor.create()
+</script>

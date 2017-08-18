@@ -1,7 +1,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap.min
-//= require ckeditor/init
+//= require wangEditor.min
 
 
 // 图片自适应大小支持代码块

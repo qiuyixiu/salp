@@ -1,9 +1,23 @@
 <%= simple_form_for [@exchange,@exchange.comments.build] do |f| %>
     <div class="form-group">
-      <!-- <%= f.input :content, label: "发表评论", input_html: { class: "form-control"} %> -->
-      <%= f.input :content, as: :ckeditor, :label => "发表评论" %>
+      <div style="display: none;">
+        <%= f.input :content, :label => "发表评论" %>
+      </div>
+      <div id="editor">
+      </div>
     </div>
     <div class="form-actions">
       <%= f.submit "发表", disable_with: "Submiting...", class: "btn btn-primary"%>
     </div>
+
   <% end %>
+
+  <script>
+    var E = window.wangEditor
+    var editor = new E('#editor')
+    editor.customConfig.uploadImgShowBase64 = true
+    editor.customConfig.onchange = function (content) {
+      $("#comment_content").html(content)
+    }
+    editor.create()
+  </script>

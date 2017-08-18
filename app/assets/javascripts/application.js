@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap.min
-//= require ckeditor/init
+//= require wangEditor.min
 //= require_tree .
 
 $(function () {
