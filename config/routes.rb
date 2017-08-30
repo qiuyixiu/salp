@@ -52,6 +52,7 @@ Rails.application.routes.draw do
     resources :lists
     resources :works
     resources :exchanges
+    resources :users
   end
 
   namespace :account do
