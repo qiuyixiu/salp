@@ -21,12 +21,20 @@
         <tbody>
           <% @exchanges.each do |exchange| %>
             <tr>
-              <td><%= link_to(exchange.title, exchange_path(exchange))  %></td>
+              <td>
+                <%= render_exchange_status(exchange) %>
+                <%= link_to(exchange.title, exchange_path(exchange))  %>
+              </td>
 
               <td><%= exchange.created_at %></td>
               <td>
                 <%= link_to("编辑", edit_admin_exchange_path(exchange)) %> |
                 <%= link_to("删除", admin_exchange_path(exchange), method: :delete, data: { confirm: "你确定要删除吗？"}) %>
+                <% if exchange.is_hidden %>
+                  <%= link_to("发布", publish_admin_exchange_path(exchange), :method => :post, :class => "btn btn-xs btn-success") %>
+                <% else %>
+                  <%= link_to("隐藏", hide_admin_exchange_path(exchange), :method => :post, :class => "btn btn-xs btn-warning") %>
+                <% end %>
               </td>
             </tr>
           <% end %>

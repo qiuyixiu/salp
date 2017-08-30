@@ -33,6 +33,12 @@
               </ul>
               <hr>
               <ul class="nav nav-pills nav-stacked text-center" style="max-width: 300px;">
+                <h5>国内外作品交流栏目</h5>
+                <li><%= link_to("我的文章", account_exchange_collections_path) %></li>
+                <li><%= link_to("我要投稿", new_exchange_path) %></li>
+              </ul>
+              <hr>
+              <ul class="nav nav-pills nav-stacked text-center" style="max-width: 300px;">
                 <li><%= link_to("编辑账户", edit_account_user_path(current_user)) %></li>
               </ul>
               <hr>

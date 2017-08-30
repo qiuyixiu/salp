@@ -44,9 +44,24 @@ class Admin::ExchangesController < ApplicationController
     redirect_to admin_exchanges_path
   end
 
+  def publish
+    @exchange = Exchange.find(params[:id])
+    @exchange.is_hidden = false
+    @exchange.save
+    redirect_to :back
+  end
+
+  def hide
+    @exchange = Exchange.find(params[:id])
+    @exchange.is_hidden = true
+    @exchange.save
+    redirect_to :back
+  end
+
+
   private
 
   def exchange_params
-    params.require(:exchange).permit(:title, :description, :image)
+    params.require(:exchange).permit(:title, :description, :image, :is_hidden)
   end
 end

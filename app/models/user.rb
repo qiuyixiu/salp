@@ -51,6 +51,20 @@ class User < ApplicationRecord
   has_many :educations
 
   has_many :exchanges
+  has_many :exchange_collections
+  has_many :participated_exchanges, through: :exchange_collections, source: :exchange
+
+  def is_member_of?(exchange)
+    participated_exchanges.include?(exchange)
+  end
+
+  def join_exchange_collection!(exchange)
+    participated_exchanges << exchange
+  end
+
+  def quit_exchange_collection!(exchange)
+    participated_exchanges.delete(exchange)
+  end
 
   has_many :industries
 

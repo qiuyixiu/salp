@@ -8,6 +8,7 @@
      <%= image_tag(@message.image.small.url) %>
     <% end %>
     <%= f.input :image,  as: :file, :label => "封面" %>
+    <%= f.input :is_hidden %>
     <div style="display: none;">
       <%= f.input :description, :label => "内容" %>
     </div>

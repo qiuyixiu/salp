@@ -51,7 +51,12 @@ Rails.application.routes.draw do
     resources :educations
     resources :lists
     resources :works
-    resources :exchanges
+    resources :exchanges do
+      member do
+        post :publish
+        post :hide
+      end
+    end
     resources :users
   end
 
@@ -59,5 +64,6 @@ Rails.application.routes.draw do
     resources :users
     resources :message_collections
     resources :offer_collections
+    resources :exchange_collections
   end
 end

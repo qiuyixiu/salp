@@ -1,17 +1,18 @@
 <div class="account-box">
 
-  <h3 class="text-center">我要投求职招聘信息</h3>
+  <h3 class="text-center">我要投作品</h3>
   <br>
 
-<%= simple_form_for [@offer] do |f| %>
+<%= simple_form_for [@exchange] do |f| %>
   <div class="form-group">
     <%= f.input :title, :label => "标题" %>
     <%= f.input :image, as: :file, :label => "封面" %>
+    <!-- <%= f.input :description, as: :ckeditor, :label => "内容" %> -->
     <div style="display: none;">
       <%= f.input :description, :label => "内容" %>
     </div>
     <div id="editor">
-      <%== @offer.description %>
+      <%== @exchange.description %>
     </div>
     <hr>
 
@@ -20,12 +21,13 @@
 <% end %>
 
 </div>
+
 <script>
   var E = window.wangEditor
   var editor = new E('#editor')
   editor.customConfig.uploadImgShowBase64 = true
   editor.customConfig.onchange = function (description) {
-    $("#offer_description").html(description)
+    $("#exchange_description").html(description)
   }
   editor.create()
 </script>
