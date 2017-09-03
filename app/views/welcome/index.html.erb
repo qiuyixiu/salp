@@ -168,13 +168,14 @@
 
 
 <!-- 皮雕比赛区域 -->
-<hr>
+<!-- <hr> -->
+<br>
 <div class="container">
-  <div class="row nav-container">
+  <!-- <div class="row nav-container">
     <div class="col-xs-12 text-center">
       <h5>皮雕大赛精彩回顾</h5>
     </div>
-  </div>
+  </div> -->
 
   <div class="row index-content">
     <% @games.each do |game| %>
@@ -277,24 +278,29 @@
   </div>
 </div>
 
-<!-- 人才伯乐及2017比赛作品区域 -->
+<!-- 人才伯乐\比赛作品\培训区域 -->
 <hr>
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <div class="col-lg-3 col-md-3 col-xs-4">
-        <h4 class="text-left">
+      <div class="col-lg-3 col-md-3 col-xs-3">
+        <h4 class="text-center">
           <%= link_to("人才•伯乐", offers_path) %>
         </h4>
       </div>
-      <div class="col-lg-4 col-md-4  col-xs-4">
+      <div class="col-lg-3 col-md-3 col-xs-3">
         <h4 class="text-center">
           <%= link_to("皮雕艺术大赛部分作品欣赏", works_path) %>
         </h4>
       </div>
-      <div class="col-lg-4 col-md-4 col-xs-4">
-        <h4 class="text-right">
+      <div class="col-lg-3 col-md-3 col-xs-3">
+        <h4 class="text-center">
           <%= link_to("皮雕艺术大赛获奖作品名单", lists_path) %>
+        </h4>
+      </div>
+      <div class="col-lg-3 col-md-3 col-xs-3">
+        <h4 class="text-center">
+          <%= link_to("各地皮雕培训、体验", educations_path) %>
         </h4>
       </div>
     </div>
@@ -302,12 +308,12 @@
 </div>
 
 <!-- 各地培训信息区域 -->
-<hr>
+<!-- <hr>
 <div class="row">
   <div class="col-md-12 text-center">
     <%= link_to("各地皮雕培训、体验", educations_path, class: "btn btn-md btn-info", target: "_blank") %>
   </div>
-</div>
+</div> -->
 
 <!-- 优秀会员单位展示 -->
 <hr>
