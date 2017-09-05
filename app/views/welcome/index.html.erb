@@ -232,14 +232,16 @@
 <div class="container">
   <div class="row topspan">
     <!-- 了解促进会区域 -->
-    <div class="col-lg-3 col-md-3 col-xs-3">
+    <div class="col-lg-3 col-md-6 col-xs-6">
       <h4 class="text-center">了解促进会</h4>
       <table class="table table-striped">
         <% @introductions.each do |introduction| %>
           <div class="col-md-12">
             <tr>
               <td>
-                <%= link_to(introduction.title, introduction_path(introduction)) %>
+                <div style="overflow:hidden; text-overflow:ellipsis; white-space:nowrap; width:200px;">
+                  <%= link_to(introduction.title, introduction_path(introduction)) %>
+                </div>
               </td>
             </tr>
           </div>
@@ -251,14 +253,16 @@
     </div>
 
     <!-- 本会动态区域 -->
-    <div class="col-lg-3 col-md-3 col-xs-3 index-border" >
+    <div class="col-lg-3 col-md-6 col-xs-6 index-border" >
       <h4 class="text-center">本会动态</h4>
       <table class="table table-striped">
         <% @messages.each do |message| %>
             <div class="col-md-12">
               <tr>
                 <td>
-                  <%= link_to(message.title, message_path(message)) %>
+                  <div style="overflow:hidden; text-overflow:ellipsis; white-space:nowrap; width:200px;">
+                    <%= link_to(message.title, message_path(message)) %>
+                  </div>
                 </td>
               </tr>
             </div>
@@ -270,14 +274,16 @@
     </div>
 
     <!-- 行业资讯区域 -->
-    <div class="col-lg-3 col-md-3 col-xs-3" >
+    <div class="col-lg-3 col-md-6 col-xs-6" >
       <h4 class="text-center">行业资讯</h4>
       <table class="table table-striped">
         <% @industries.each do |industry| %>
             <div class="col-md-12">
               <tr>
                 <td>
-                  <%= link_to(industry.title, industry_path(industry)) %>
+                  <div style="overflow:hidden; text-overflow:ellipsis; white-space:nowrap; width:200px;">
+                    <%= link_to(industry.title, industry_path(industry)) %>
+                  </div>
                 </td>
               </tr>
             </div>
@@ -289,14 +295,16 @@
     </div>
 
     <!-- 国内外作品交流区域 -->
-    <div class="col-lg-3 col-md-3 col-xs-3" >
+    <div class="col-lg-3 col-md-6 col-xs-6" >
       <h4 class="text-center">国内外作品交流</h4>
       <table class="table table-striped">
         <% @exchanges.each do |exchange| %>
             <div class="col-md-12">
               <tr>
                 <td>
-                  <%= link_to(exchange.title, exchange_path(exchange)) %>
+                  <div style="overflow:hidden; text-overflow:ellipsis; white-space:nowrap; width:200px;">
+                    <%= link_to(exchange.title, exchange_path(exchange)) %>
+                  </div>
                 </td>
               </tr>
             </div>
@@ -313,23 +321,23 @@
 <hr>
 <div class="container">
   <div class="row">
-    <div class="col-md-12">
-      <div class="col-lg-3 col-md-3 col-xs-3">
+    <div class="col-lg-12">
+      <div class="col-lg-3 col-md-6 col-xs-6">
         <h4 class="text-center">
           <%= link_to("人才•伯乐", offers_path) %>
         </h4>
       </div>
-      <div class="col-lg-3 col-md-3 col-xs-3">
+      <div class="col-lg-3 col-md-6 col-xs-6">
         <h4 class="text-center">
           <%= link_to("皮雕艺术大赛部分作品欣赏", works_path) %>
         </h4>
       </div>
-      <div class="col-lg-3 col-md-3 col-xs-3">
+      <div class="col-lg-3 col-md-6 col-xs-6">
         <h4 class="text-center">
           <%= link_to("皮雕艺术大赛获奖作品名单", lists_path) %>
         </h4>
       </div>
-      <div class="col-lg-3 col-md-3 col-xs-3">
+      <div class="col-lg-3 col-md-6 col-xs-6">
         <h4 class="text-center">
           <%= link_to("各地皮雕培训、体验", educations_path) %>
         </h4>
