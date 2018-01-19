@@ -7,7 +7,7 @@
       <hr>
     </div>
     <% @games.each do |game| %>
-      <div class="col-xs-12 col-md-12">
+      <div class="col-xs-12 col-md-6">
         <div class="text-center game-index-title">
           <%= link_to(game.title, game_path(game)) %>
         </div>
