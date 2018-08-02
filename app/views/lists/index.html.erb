@@ -8,15 +8,15 @@
     </div>
     <% @lists.each do |list| %>
       <div class="col-xs-12 col-md-12 text">
-        <%= link_to list_path(list) do %>
+        <!-- <%= link_to list_path(list) do %>
 
-         <% end %>
+         <% end %> -->
           <div class="text-left">
             <%= link_to(list.title, list_path(list)) %>
           </div>
-          <div class="description">
+          <!-- <div class="description">
             <%= sanitize list.description %>
-          </div>
+          </div> -->
       </div>
     <% end %>
     <div class="text-center">
